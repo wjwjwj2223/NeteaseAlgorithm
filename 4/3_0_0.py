@@ -36,7 +36,7 @@ class HashTable(object):
     def __init__(self):
         self.size = 32
         self.count = 0
-        self.l_list = [LinkedList()] * self.size
+        self.l_list = [LinkedList() for _ in range(0, self.size)]
 
     def addValue(self, value):
         hashValue = hash(value)
@@ -53,7 +53,7 @@ class HashTable(object):
 
     def resize(self):
         self.size = self.size * 2
-        new_list = [LinkedList()] * self.size
+        new_list = [LinkedList() for _ in range(0, self.size)]
         for linkedList in self.l_list:
             node = linkedList.firstNode
             while node:
