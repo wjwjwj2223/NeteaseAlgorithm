@@ -30,7 +30,6 @@ class MinHeap(object):
             self.__swap(index, parent_index)
             self.shitUp(parent_index)
 
-
     def shitDown(self):
         if self.__size <= 2:
             return
